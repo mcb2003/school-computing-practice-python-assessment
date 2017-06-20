@@ -16,21 +16,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    email:  mikeybuchan@hotmail.co.uk
 
-#define some important variables
-board = ""
+#create the main board class
+class game(object):
+    def __init__(self):
+        self.board = "43   44   45   46   47   48   49\n\n42   41   40   39   38   37   36\n\n29   30   31   32   33   34   35\n\n28   27   26   25   24   23   22\n\n15   16   17   18   19   20   21\n\n14   13   12   11   10   09   08\n\n01   02   03   04   05   06   07"
 
-#create a function to initialise the board
-def init_board():
-    #make sure we can access the board variable
-    global board
-    #these 7 lines generate the board. This could be done using for loops, however, this sould actually be more lines of code
-    board = "43  44  45  46  47  48  49\n"
-    board = board + "42  41  40  39  38  37  36\n"
-    board = board + "29  30  31  32  33  34  35\n"
-    board = board + "28  27  26  25  24  23  22\n"
-    board = board +15  16  17  18  19  20  21\n"
-    board = board + "14  13  12  11  10  09  08\n"
-    board = board + "01  02  03  04  05  06  07"
-    print(board)
-
-init_board
+boardgame = game()
+print(boardgame.board)
