@@ -23,15 +23,21 @@ import random
 class game(object):
     def __init__(self):
         self.board = "43   44   45   46   47   48   49\n\n42   41   40   39   38   37   36\n\n29   30   31   32   33   34   35\n\n28   27   26   25   24   23   22\n\n15   16   17   18   19   20   21\n\n14   13   12   11   10   09   08\n\n01   02   03   04   05   06   07"
-        self.playerdice = []
-        for x in range(2):
-            self.playerdice.append([0,0])
+        self.playerdice = [[0,0],[0,0]]
+        self.playerpos = [0,0]
     
     def roll_dice(self,player):
         for i in range(2):
             dice = random.randint(1,6)
-            self.playerdice[player-1][0] = dice
+            self.playerdice[player-1][i] = dice
         print("Player", player, "got a", self.playerdice[player-1][0], "and a", self.playerdice[player-1][1], "!")
+        if self.playerdice[player-1][0]==self.playerdice[player-1][1]:
+            print("Oh no! Looks like we have a double. Sorry, go back", dice, "spaces.")
+            self.playerpos[player-1] -= dice
+        else:
+            total = self.playerdice[player-1][0] + self.playerdice[player-1][1]
+            self.playerpos[player-1] += total
+        print("You are now on space", self.playerpos[player-1])
         input("Press enter to continue: ")
 
 boardgame = game()
