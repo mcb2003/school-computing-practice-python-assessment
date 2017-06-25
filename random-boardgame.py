@@ -58,5 +58,6 @@ class game(object):
             self.playerpos = [0,0]
         else:
             self.won = True
+            exit(0)
 
 boardgame = game()
