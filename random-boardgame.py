@@ -25,12 +25,23 @@ class game(object):
         self.board = "43   44   45   46   47   48   49\n\n42   41   40   39   38   37   36\n\n29   30   31   32   33   34   35\n\n28   27   26   25   24   23   22\n\n15   16   17   18   19   20   21\n\n14   13   12   11   10   09   08\n\n01   02   03   04   05   06   07"
         self.playerdice = [[0,0],[0,0]]
         self.playerpos = [0,0]
+        self.start_game()
+    
+    def start_game(self):
+        print("Welcome to Random BoardGame! In this game, you play against an aponent, rolling two dice. If those dice turn out to be the same, say gouldbye to your awesome score, because points will be taken. Otherwise, however, the dice will be added and this will be added to your score, moving you up the board. The first to reach 49 wins. Good luck!\nCopyright (C) 2017  Michael C Buchan\nboard:")
+        print(self.board)
+        self.won = False
+        while self.won==False:
+            for player in range(2):
+                self.roll_dice(player)
     
     def roll_dice(self,player):
         for i in range(2):
             dice = random.randint(1,6)
             self.playerdice[player-1][i] = dice
         print("Player", player, "got a", self.playerdice[player-1][0], "and a", self.playerdice[player-1][1], "!")
+        if self.playerpos[player-1]>=49:
+            self.player_win(player)
         if self.playerdice[player-1][0]==self.playerdice[player-1][1]:
             print("Oh no! Looks like we have a double. Sorry, go back", dice, "spaces.")
             self.playerpos[player-1] -= dice
@@ -39,7 +50,9 @@ class game(object):
             self.playerpos[player-1] += total
         print("You are now on space", self.playerpos[player-1])
         input("Press enter to continue: ")
+    
+    def player_win(self,player):
+        print("Player", player, "has won! Congratulations!")
+        self.won = True
 
 boardgame = game()
-print(boardgame.board)
-boardgame.roll_dice(1)
