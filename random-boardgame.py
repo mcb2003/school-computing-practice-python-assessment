@@ -33,7 +33,7 @@ class game(object):
         self.won = False
         while self.won==False:
             for player in range(2):
-                self.roll_dice(player)
+                self.roll_dice(player+1)
     
     def roll_dice(self,player):
         for i in range(2):
