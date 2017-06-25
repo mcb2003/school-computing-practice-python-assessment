@@ -53,6 +53,10 @@ class game(object):
     
     def player_win(self,player):
         print("Player", player, "has won! Congratulations!")
-        self.won = True
+        user_in = input("Play again? y/N? ").lower()
+        if user_in=="y":
+            self.playerpos = [0,0]
+        else:
+            self.won = True
 
 boardgame = game()
