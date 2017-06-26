@@ -45,10 +45,11 @@ class game(object):
         if self.playerdice[player-1][0]==self.playerdice[player-1][1]:
             print("Oh no! Looks like we have a double. Sorry, go back", dice, "spaces.")
             self.playerpos[player-1] -= dice
+            print("You are now on space", self.playerpos[player-1])
         else:
             total = self.playerdice[player-1][0] + self.playerdice[player-1][1]
             self.playerpos[player-1] += total
-        print("You are now on space", self.playerpos[player-1])
+            print("You are now on space", self.playerpos[player-1])
         input("Press enter to continue: ")
     
     def player_win(self,player):
