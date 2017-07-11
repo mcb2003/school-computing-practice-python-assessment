@@ -21,10 +21,12 @@ import random
 
 #create the main board class
 class game(object):
-    def __init__(self):
+    def __init__(self,confpath="./random-boardgame.conf"):
         self.board = "43   44   45   46   47   48   49\n\n42   41   40   39   38   37   36\n\n29   30   31   32   33   34   35\n\n28   27   26   25   24   23   22\n\n15   16   17   18   19   20   21\n\n14   13   12   11   10   09   08\n\n01   02   03   04   05   06   07"
+        self.confpath = confpath
         self.playerdice = [[0,0],[0,0]]
         self.playerpos = [0,0]
+        self.obstacles = [[],[]]
         self.start_game()
     
     def start_game(self):
@@ -61,5 +63,16 @@ class game(object):
         else:
             self.won = True
             exit(0)
+    
+    def read_obstacles(self):
+        self.confile = open(self.confpath,'w')
+        self.conftext = self.confile.read()
+        self.conftext = self.conftext.split("\n")
+        for line in self.conftext:
+            if "obstacle: "==line[:9]:
+                obstpos = line.split(": ")[1]
+                obstspaces = line.split(": ")[2]
+                self.obstacles[0].append(obstpos)
+                self.obstacles[1].append(obstspaces)
 
 boardgame = game()
