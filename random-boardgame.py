@@ -55,6 +55,11 @@ class game(object):
             self.playerpos[player-1] += total
         if self.playerpos[player-1]<=0:
             self.playerpos[player-1] = 0
+        if self.playerpos[player-1] in self.obstacles[0]:
+            index = self.obstacles[0].index(self.playerpos[player-1])
+            spaces = self.obstacles[1][index]
+            print("It appears we've hit an obstacl. You can now go forward/back ", spaces, " spaces.")
+            self.playerpos[player-1] += int(spaces)
         print("You are now on space", self.playerpos[player-1])
         input("Press enter to continue: ")
     
@@ -76,7 +81,7 @@ class game(object):
             obstspaces = line.split(" ")[1]
             self.obstacles[0].append(obstpos)
             self.obstacles[1].append(obstspaces)
-        print(self.obstacles[0])
-        print(self.obstacles[1])
+        #print(self.obstacles[0])
+        #print(self.obstacles[1])
 
 boardgame = game()

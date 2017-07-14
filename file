@@ -1,4 +1,0 @@
-  File "./random-boardgame.py", line 48
-    elif self.playerpos[1]>=49:
-    ^
-IndentationError: unexpected indent
