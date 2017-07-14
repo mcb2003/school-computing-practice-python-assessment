@@ -43,8 +43,10 @@ class game(object):
             dice = random.randint(1,6)
             self.playerdice[player-1][i] = dice
         print("Player", player, "got a", self.playerdice[player-1][0], "and a", self.playerdice[player-1][1], "!")
-        if self.playerpos[player-1]>=49:
-            self.player_win(player)
+        if self.playerpos[0]>=49:
+            self.player_win(0)
+        elif self.playerpos[1]>=49:
+            self.player_win(1)
         if self.playerdice[player-1][0]==self.playerdice[player-1][1]:
             print("Oh no! Looks like we have a double. Sorry, go back", dice, "spaces.")
             self.playerpos[player-1] -= dice
