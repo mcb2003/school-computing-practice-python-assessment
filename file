@@ -1,0 +1,44 @@
+Welcome to Random BoardGame! In this game, you play against an aponent, rolling two dice. If those dice turn out to be the same, say gouldbye to your awesome score, because points will be taken. Otherwise, however, the dice will be added and this will be added to your score, moving you up the board. The first to reach 49 wins. Good luck!
+Copyright (C) 2017  Michael C Buchan
+board:
+43   44   45   46   47   48   49
+
+42   41   40   39   38   37   36
+
+29   30   31   32   33   34   35
+
+28   27   26   25   24   23   22
+
+15   16   17   18   19   20   21
+
+14   13   12   11   10   09   08
+
+01   02   03   04   05   06   07
+Player 1 got a 5 and a 6 !
+It appears we've hit an obstacl. You can now go forward/back  11  spaces.
+You are now on space 22
+Press enter to continue: Player 2 got a 1 and a 4 !
+It appears we've hit an obstacl. You can now go forward/back  5  spaces.
+You are now on space 10
+Press enter to continue: Player 1 got a 4 and a 2 !
+You are now on space 28
+Press enter to continue: Player 2 got a 1 and a 2 !
+It appears we've hit an obstacl. You can now go forward/back  13  spaces.
+You are now on space 26
+Press enter to continue: Player 1 got a 2 and a 4 !
+You are now on space 34
+Press enter to continue: Player 2 got a 3 and a 1 !
+You are now on space 30
+Press enter to continue: Player 1 got a 4 and a 1 !
+You are now on space 39
+Press enter to continue: Player 2 got a 5 and a 3 !
+You are now on space 38
+Press enter to continue: Player 1 got a 5 and a 2 !
+You are now on space 46
+Press enter to continue: Player 2 got a 4 and a 1 !
+You are now on space 43
+Press enter to continue: Player 1 got a 4 and a 1 !
+You are now on space 51
+Press enter to continue: Player 2 got a 1 and a 1 !
+Player 0 has won! Congratulations!
+Play again? y/N? 

@@ -79,8 +79,8 @@ class game(object):
         for line in self.conftext:
             obstpos = line.split(" ")[0]
             obstspaces = line.split(" ")[1]
-            self.obstacles[0].append(obstpos)
-            self.obstacles[1].append(obstspaces)
+            self.obstacles[0].append(int(obstpos))
+            self.obstacles[1].append(int(obstspaces))
         #print(self.obstacles[0])
         #print(self.obstacles[1])
 
