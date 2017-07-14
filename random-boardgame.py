@@ -27,6 +27,7 @@ class game(object):
         self.playerdice = [[0,0],[0,0]]
         self.playerpos = [0,0]
         self.obstacles = [[],[]]
+        self.load_obstacles()
         self.start_game()
     
     def start_game(self):
@@ -64,15 +65,16 @@ class game(object):
             self.won = True
             exit(0)
     
-    def read_obstacles(self):
-        self.confile = open(self.confpath,'w')
+    def load_obstacles(self):
+        self.confile = open(self.confpath,'r')
         self.conftext = self.confile.read()
         self.conftext = self.conftext.split("\n")
         for line in self.conftext:
-            if "obstacle: "==line[:9]:
-                obstpos = line.split(": ")[1]
-                obstspaces = line.split(": ")[2]
-                self.obstacles[0].append(obstpos)
-                self.obstacles[1].append(obstspaces)
+            obstpos = line.split(" ")[0]
+            obstspaces = line.split(" ")[1]
+            self.obstacles[0].append(obstpos)
+            self.obstacles[1].append(obstspaces)
+        print(self.obstacles[0])
+        print(self.obstacles[1])
 
 boardgame = game()
